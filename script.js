@@ -42,33 +42,25 @@ const playMusic = (track) => {
 // ---------------- GET SONGS FUNCTION ----------------
 async function getSongs(folder) {
     currFolder = folder;
-    songs = [];
-    let a = await fetch(`http://127.0.0.1:3000/${folder}`);
-    let response = await a.text();
-    let div = document.createElement("div");
-    div.innerHTML = response;
-    let a_s = div.getElementsByTagName("a");
 
-    for (let i = 0; i < a_s.length; i++) {
-        const element = a_s[i];
-        if (element.href.includes(".mp3")) {
-            // console.log(element.href.split(`${folder}`)[1])
-
-            // console.log(element.href.split("/").pop())
-
-            let filename = decodeURIComponent(element.href.split("/").pop())
-                .replace(/\\/g, "")
-                .replace(/\//g, "")
-                .replace(/_/g, " ")
-                .replace("songshindi", "").replace("songsEnglish", "");
-
-
-            songs.push(filename);
-
-        }
+    if (folder.includes("hindi")) {
+        songs = [
+            "Dhurandhar Baloch.mp3",
+            "gehra hua.mp3",
+            "Kalyani.mp3",
+            "Shararat-Dhurandhar.mp3"
+        ];
+    } 
+    else if (folder.includes("English")) {
+        songs = [
+            "They Call This Love.mp3",
+            "Weekend-starboy.mp3"
+        ];
+    } 
+    else {
+        songs = [];
     }
 
-    console.log(songs);
     return songs;
 }
 //load folder function
