@@ -57,6 +57,12 @@ async function getSongs(folder) {
             "Weekend-starboy.mp3"
         ];
     } 
+    else if (folder.includes("phonk")) {
+        songs = [
+            "NO BATIDO SLOWED.mp3",
+            "The Weeknd-Sao Paulo.mp3"
+        ];
+    } 
     else {
         songs = [];
     }

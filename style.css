@@ -31,9 +31,11 @@ body {
 
 .right {
     width: 75vw;
-    max-height: 100vh;
-    overflow: auto;
+    height: 100vh;
+    overflow-y: auto;
     padding: 10px;
+    padding-bottom: 120px;
+    box-sizing: border-box;
     position: relative;
 
 }
@@ -106,6 +108,7 @@ svg {
     flex-wrap: wrap;
     width: 100%;
     height: auto;
+    /* overflow: scroll; */
 }
 
 .play {
